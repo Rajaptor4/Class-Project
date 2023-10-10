@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NexTop!</title>
+    <style>
+        body {
+            background-color: darkblue;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #current-time {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function updateTime() {
+            let now = new Date();
+            let timeString = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            document.getElementById("current-time").innerText = timeString;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+</head>
+<body onload="updateTime()">
+    <h1>NexTop!</h1>
+    <div id="current-time"></div>
+    <form action="/echo_user_input" method="post">
+        <label for="user_input">Enter your data here:</label>
+        <input type="text" id="user_input" name="user_input">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
